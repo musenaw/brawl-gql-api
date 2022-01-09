@@ -1,15 +1,14 @@
 import { ApolloServer } from 'apollo-server-express'
-import 'reflect-metadata'
 import 'dotenv-safe/config'
-import { createConnection } from 'typeorm'
-import { buildSchema } from 'type-graphql'
 import express from 'express'
+import 'reflect-metadata'
+import { buildSchema } from 'type-graphql'
+import { createConnection } from 'typeorm'
 import { BrawlerResolver } from './modules/brawler/BrawlerResolver'
-import { PlayerResolver } from './modules/player/PlayerResolver'
 import { PlayerBrawlerResolver } from './modules/player-brawler/PlayerBrawlerResolver'
+import { PlayerResolver } from './modules/player/PlayerResolver'
 
 const main = async () => {
-  console.log(process.env)
   await createConnection()
 
   const app = express()

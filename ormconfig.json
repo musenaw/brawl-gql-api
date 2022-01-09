@@ -6,7 +6,11 @@
   "username": "myuser",
   "password": "mypass",
   "database": "mydb",
-  "synchronize": true,
+  "synchronize": false,
   "logging": true,
-  "entities": ["src/entity/*.*"]
+  "entities": ["src/entity/*.ts"],
+  "migrations": ["migration/*.ts"],
+  "cli": {
+    "migrationsDir": "migration"
+  }
 }
