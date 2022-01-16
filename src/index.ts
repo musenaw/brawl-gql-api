@@ -9,7 +9,8 @@ import { PlayerBrawlerResolver } from './modules/player-brawler/PlayerBrawlerRes
 import { PlayerResolver } from './modules/player/PlayerResolver'
 
 const main = async () => {
-  await createConnection()
+  const conn = await createConnection()
+  conn.runMigrations()
 
   const app = express()
 
